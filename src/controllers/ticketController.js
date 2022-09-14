@@ -13,7 +13,7 @@ exports.get = async (req, res, next) => {
   }
 }
 
-// Consultar pela TAG
+// Consultar pela Tag
 
 exports.getByTag = async (req, res, next) => {
   try{
