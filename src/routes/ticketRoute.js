@@ -8,4 +8,4 @@ router.post('/', ticketController.post)
 router.put('/:id', ticketController.put)
 router.delete('/:id', ticketController.delete)
 
-module.exports = router;
+module.exports = router

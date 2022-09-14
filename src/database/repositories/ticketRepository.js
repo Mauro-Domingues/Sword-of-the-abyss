@@ -50,11 +50,11 @@ class TicketRepository {
   // Deleta um ticket no DB
 
   async delete(id){
-    const conn = await db.connectToMySql();
-    const query = "DELETE FROM ticket WHERE id = ?";
-    const ticket = await conn.query(query, [id]);
+    const conn = await db.connectToMySql()
+    const query = "DELETE FROM ticket WHERE id = ?"
+    const ticket = await conn.query(query, [id])
   }
 
 }
 
-module.exports = TicketRepository;
+module.exports = TicketRepository

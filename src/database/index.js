@@ -1,9 +1,9 @@
-const mysql = require("mysql2/promise");
+const mysql = require("mysql2/promise")
 
 const connectToMySql = async () => {
 
     if (global.connection && global.connection.state !== 'disconnected')
-        return global.connection;
+        return global.connection
     const config = {
         host: "http://localhost/phpmyadmin/index.php?lang=pt",
         user: "root",
