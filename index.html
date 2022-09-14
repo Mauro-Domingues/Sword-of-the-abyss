@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            width: 400px;
+            padding: 20px;
+            margin: 40px 0;
+            gap: 15px;
+            border: 2px dotted #000;
+        }
+        form h1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="POST">
+        <h1>Formulário de Suporte</h1>
+        <label for="title">Título: </label>
+        <input type="text" id="title" name="title" placeholder="Digite um título" required>
+        <label for="data">Data: </label>
+        <input type="datetime-local" id="data" name="data" placeholder="Quando isso ocorreu?" required>
+        <label for="options">O que você deseja fazer?</label>
+        <select name="options" id="options">
+            <option selected>Enviar um feedback</option>
+            <option>Relatar um problema</option>
+        </select>
+        <label for="description">Descrição: </label>
+        <textarea id="description" name="description" placeholder="Descreva a situação" required></textarea>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="usuario_email" placeholder="Digite um email de contato" required>
+        <button type="submit">Enviar</button>
+        <button type="button" class="hide-box">Cancelar</button>
+    </form>
+
+    <a href="./admin.html">Ver a página do Admin</a>
+</body>
+</html>
