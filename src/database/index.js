@@ -5,7 +5,7 @@ const connectToMySql = async () => {
     if (global.connection && global.connection.state !== 'disconnected')
         return global.connection
     const config = {
-        host: "http://localhost/phpmyadmin/index.php?lang=pt",
+        host: "http://localhost/phpmyadmin/index.php",
         user: "root",
         password: "",
         database: "report_suggestion_db"
