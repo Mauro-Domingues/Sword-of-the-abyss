@@ -1,19 +1,29 @@
 {
-  "name": "node-express",
+  "name": "sword-of-the-abyss",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
-  "dependencies": {
-      "express": "^4.15.4",
-      "mysql2": "^2.3.3"
-  },
-  "devDependencies": {
-      "nodemon": "^1.17.3"
+  "description": "deploy: https://mauro-domingues.github.io/Sword-of-the-abyss/",
+  "main": "script.js",
+  "bin": {
+    "sword-of-the-abyss": "bin/server.js"
   },
   "scripts": {
-      "start": "nodemon ./bin/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mauro-Domingues/Sword-of-the-abyss.git"
   },
   "keywords": [],
-  "author": "Mauro-Domingues",
-  "license": ""
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mauro-Domingues/Sword-of-the-abyss/issues"
+  },
+  "homepage": "https://github.com/Mauro-Domingues/Sword-of-the-abyss#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19"
+  }
 }
