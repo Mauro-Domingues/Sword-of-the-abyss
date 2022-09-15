@@ -11,3 +11,7 @@ app.use('/', index)
 app.use('/ticket', ticketRoute)
 
 module.exports = app
+
+//document.querySelector("#send").addEventListener("click", () => {
+    
+//})
