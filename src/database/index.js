@@ -9,7 +9,6 @@ const connectToMySql = async () => {
         user: "root",
         password: "RI1097032085co",
         database: "report_suggestion_db"
-        // Dados formados ao criar um DB
     }
 
     const connection = await mysql.createConnection(config)
