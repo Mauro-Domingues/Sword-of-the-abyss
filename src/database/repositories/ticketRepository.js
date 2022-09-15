@@ -4,9 +4,8 @@ class TicketRepository {
 
   async create(ticketData){
     const conn = await db.connectToMySql()
-    const query = "INSERT INTO ticket (id, title, data, type, status, description, contact) VALUES (?, ?, ?, ?, ?, ?, ?)"
+    const query = "INSERT INTO ticket (title, data, type, status, description, contact) VALUES (A?, ?, ?, ?, ?, ?)"
     const ticket = await conn.query(query, [
-      ticketData.id,
       ticketData.title,
       ticketData.data,
       ticketData.type,
