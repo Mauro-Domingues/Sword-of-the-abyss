@@ -12,7 +12,6 @@ const connectToMySql = async () => {
     }
 
     const connection = await mysql.createConnection(config)
-    console.log("Conexão realizada com sucesso em http://localhost:3000")
     global.connection = connection
 }
 

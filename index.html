@@ -31,26 +31,26 @@
 </head>
 <body>
 
-    <form id="form">
+    <form id="form" action="http://localhost:3000/ticket" target="_blank" method="post">
         <h1>Formulário de Suporte</h1>
         <label for="title">Título: </label>
         <input type="text" id="title" name="title" placeholder="Digite um título" required>
         <label for="data">Data: </label>
         <input type="datetime-local" id="data" name="data" placeholder="Quando isso ocorreu?" required>
         <label for="options">O que você deseja fazer?</label>
-        <select name="options" id="options">
+        <select name="type" id="options">
             <option value="suggestion" selected>Enviar um feedback</option>
             <option value="report">Relatar um problema</option>
         </select>
         <label for="description">Descrição: </label>
         <textarea id="description" name="description" placeholder="Descreva a situação" required></textarea>
         <label for="email">Email: </label>
-        <input type="email" id="email" name="usuario_email" placeholder="Digite um email de contato" required>
+        <input type="email" id="email" name="contact" placeholder="Digite um email de contato" required>
         <button type="button" id="abort">Cancelar</button>
         <button type="submit" id="send">Enviar</button>
     </form>
     <p>server.js <=> <b>app.js</b> <=> routes/index.js <= ticketRoute.js <= ticketController.js <= ticketService.js <= ticketRepository.js <= repositories/index.js</p>
     <a href="./admin.html">Ver a página do Admin</a>
-    <script type="module" src="./src/app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
