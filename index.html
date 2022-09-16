@@ -30,8 +30,8 @@
     </style>
 </head>
 <body>
-
-    <form id="form" action="http://localhost:3000/ticket" target="_blank" method="post">
+    <!--Utilizar o site em que a API foi implantada-->
+    <form id="form" action="https://sword-of-the-abyss-api.herokuapp.com/" target="_blank" method="post">
         <h1>Formulário de Suporte</h1>
         <label for="title">Título: </label>
         <input type="text" id="title" name="title" placeholder="Digite um título" required>
@@ -49,8 +49,5 @@
         <button type="button" id="abort">Cancelar</button>
         <button type="submit" id="send">Enviar</button>
     </form>
-    <p>server.js <=> <b>app.js</b> <=> routes/index.js <= ticketRoute.js <= ticketController.js <= ticketService.js <= ticketRepository.js <= repositories/index.js</p>
-    <a href="./admin.html">Ver a página do Admin</a>
-    <script src="script.js"></script>
 </body>
 </html>
