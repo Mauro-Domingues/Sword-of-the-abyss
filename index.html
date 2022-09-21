@@ -30,8 +30,9 @@
     </style>
 </head>
 <body>
-    <!--Utilizar o site em que a API foi implantada-->
-    <form id="form" action="http://localhost:3000/ticket" target="_blank" method="POST">
+    <!--Utilizar o site em que a API foi hospedada-->
+    <!--form id="form" action="http://localhost:3000/ticket" target="_blank" method="POST"> Se quiser enviar direto pelo html ou-->
+    <form id="form">
         <h1>Formulário de Suporte</h1>
         <label for="title">Título: </label>
         <input type="text" id="title" name="title" placeholder="Digite um título" required>
@@ -44,10 +45,23 @@
         </select>
         <label for="description">Descrição: </label>
         <textarea id="description" name="description" placeholder="Descreva a situação" required></textarea>
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="contact" placeholder="Digite um email de contato" required>
+        <label for="contact">Email: </label>
+        <input type="email" id="contact" name="contact" placeholder="Digite um email de contato" required>
         <button type="button" id="abort">Cancelar</button>
-        <button type="submit" id="send">Enviar</button>
+        <!--button type="submit" id="send">Enviar</button> Se quiser enviar direto pelo html ou-->
+        <button type="button" id="send">Enviar</button>
     </form>
+    <script>
+        const title = document.getElementById("title")
+        const data = document.getElementById("data")
+        const type = document.getElementById("options")
+        const description = document.getElementById("description")
+        const contact = document.getElementById("contact")    
+        document.getElementById("send").addEventListener("click", () => {
+            let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
+            fetch("http://localhost:3000/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
+            setTimeout(() => {location.reload()}, 500)
+        })
+    </script>
 </body>
 </html>
