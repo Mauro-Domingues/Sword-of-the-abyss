@@ -65,7 +65,7 @@
         const contact = document.getElementById("contact")    
         document.getElementById("send").addEventListener("click", () => {
             let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
-            fetch("https://sota-api.vercel.app/ticket", {method: 'POST', headers: {'Access-Control-Allow-Origin': 'https://mauro-domingues.github.io/Sword-of-the-abyss','Content-Type': 'application/json'}, body: JSON.stringify(formData)})
+            fetch("https://sota-api.vercel.app/ticket", {method: 'POST', headers: {'Origin': 'https://mauro-domingues.github.io/Sword-of-the-abyss','Content-Type': 'application/json'}, body: JSON.stringify(formData)})
             //setTimeout(() => {location.reload()}, 500)
         })
     </script>
