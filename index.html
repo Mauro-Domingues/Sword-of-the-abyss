@@ -65,8 +65,8 @@
         const contact = document.getElementById("contact")    
         document.getElementById("send").addEventListener("click", () => {
             let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
-            fetch("http://localhost:3000/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
-            setTimeout(() => {location.reload()}, 500)
+            fetch("https://sota-api.vercel.app/ticket", {method: 'POST', headers: {'Access-Control-Allow-Origin': 'http://127.0.0.1:5501','Content-Type': 'application/json'}, body: JSON.stringify(formData)})
+            //setTimeout(() => {location.reload()}, 500)
         })
     </script>
 </body>
