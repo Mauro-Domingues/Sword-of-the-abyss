@@ -62,7 +62,7 @@
             const contact = document.getElementById("contact")    
             document.getElementById("send").addEventListener("click", async() => {
                 let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
-                await fetch("url da API/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
+                await fetch("https://sword-of-the-abyss-api.herokuapp.com/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
                 location.reload()
             })
         </script>
