@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte</title>
-    <style>
-        body{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        form{
-            display: grid;
-            grid-template-columns: 1fr 4fr;
-            min-width: 300px;
-            max-width: 500px;
-            width: 90%;
-            padding: 20px;
-            margin: 40px 0;
-            gap: 15px;
-            border: 2px dotted #000;
-        }
-        form h1{
-            grid-column-start: 1;
-            grid-column-end: 3;
-            text-align: center;
-        }
-        button{
-            grid-column-start: 1;
-            grid-column-end: 3;
-            width: 40%;
-            margin-left: 30%;
-        }
-    </style>
-</head>
-<body>
-    <!--Utilizar o site em que a API foi hospedada-->
-    <!--form id="form" action="http://localhost:3000/ticket" target="_blank" method="POST"> Se quiser enviar direto pelo html ou-->
-    <form id="form">
-        <h1>Formulário de Suporte</h1>
-        <label for="title">Título: </label>
-        <input type="text" id="title" name="title" placeholder="Digite um título" required>
-        <label for="data">Data: </label>
-        <input type="date" id="data" name="data" placeholder="Quando isso ocorreu?" required>
-        <label for="options">O que você deseja fazer?</label>
-        <select name="type" id="options">
-            <option value="Sugestão" selected>Enviar um feedback</option>
-            <option value="Bug">Relatar um problema</option>
-        </select>
-        <label for="description">Descrição: </label>
-        <textarea id="description" name="description" placeholder="Descreva a situação" required></textarea>
-        <label for="contact">Email: </label>
-        <input type="email" id="contact" name="contact" placeholder="Digite um email de contato" required>
-        <!--button type="submit" id="send">Enviar</button> Se quiser enviar direto pelo html ou-->
-        <button type="button" id="send">Enviar</button>
-        <button type="button" id="abort">Cancelar</button>
-    </form>
-    <script>
-        const title = document.getElementById("title")
-        const data = document.getElementById("data")
-        const type = document.getElementById("options")
-        const description = document.getElementById("description")
-        const contact = document.getElementById("contact")    
-        document.getElementById("send").addEventListener("click", () => {
-            let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
-            fetch("https://sota-api.vercel.app/ticket", {method: 'POST', headers: new Headers(), body: JSON.stringify(formData)})
-            //setTimeout(() => {location.reload()}, 500)
-        })
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suporte</title>
+        <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            form{
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                min-width: 300px;
+                max-width: 500px;
+                width: 90%;
+                padding: 20px;
+                margin: 40px 0;
+                gap: 15px;
+                border: 2px dotted #000;
+            }
+            form h1{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                text-align: center;
+            }
+            button{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                width: 40%;
+                margin-left: 30%;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Utilizar o site em que a API foi hospedada-->
+        <!--form id="form" action="url da API/ticket" target="_blank" method="POST"> Se quiser enviar direto pelo html ou-->
+        <form id="form">
+            <h1>Formulário de Suporte</h1>
+            <label for="title">Título: </label>
+            <input type="text" id="title" name="title" placeholder="Digite um título" required>
+            <label for="data">Data: </label>
+            <input type="date" id="data" name="data" placeholder="Quando isso ocorreu?" required>
+            <label for="options">O que você deseja fazer?</label>
+            <select name="type" id="options">
+                <option value="Sugestão" selected>Enviar um feedback</option>
+                <option value="Bug">Relatar um problema</option>
+            </select>
+            <label for="description">Descrição: </label>
+            <textarea id="description" name="description" placeholder="Descreva a situação" required></textarea>
+            <label for="contact">Email: </label>
+            <input type="email" id="contact" name="contact" placeholder="Digite um email de contato" required>
+            <!--button type="submit" id="send">Enviar</button> Se quiser enviar direto pelo html ou-->
+            <button type="button" id="send">Enviar</button>
+            <button type="button" id="abort">Cancelar</button>
+        </form>
+        <script>
+            const title = document.getElementById("title")
+            const data = document.getElementById("data")
+            const type = document.getElementById("options")
+            const description = document.getElementById("description")
+            const contact = document.getElementById("contact")    
+            document.getElementById("send").addEventListener("click", () => {
+                let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
+                fetch("url da API/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
+                setTimeout(() => {location.reload()}, 500)
+            })
+        </script>
+    </body>
 </html>
