@@ -40,8 +40,6 @@
             <h1>Formulário de Suporte</h1>
             <label for="title">Título: </label>
             <input type="text" id="title" name="title" placeholder="Digite um título" required>
-            <label for="data">Data: </label>
-            <input type="date" id="data" name="data" placeholder="Quando isso ocorreu?" required>
             <label for="options">O que você deseja fazer?</label>
             <select name="type" id="options">
                 <option value="Sugestão" selected>Enviar um feedback</option>
@@ -56,12 +54,11 @@
         </form>
         <script>
             const title = document.getElementById("title")
-            const data = document.getElementById("data")
             const type = document.getElementById("options")
             const description = document.getElementById("description")
             const contact = document.getElementById("contact")    
             document.getElementById("send").addEventListener("click", async() => {
-                let formData = {title: title.value, data: data.value, type: type.value, description: description.value, contact: contact.value}
+                let formData = {title: title.value, type: type.value, description: description.value, contact: contact.value}
                 await fetch("https://sword-of-the-abyss-api.herokuapp.com/ticket", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)})
                 location.reload()
             })
